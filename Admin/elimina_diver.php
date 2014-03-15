@@ -19,8 +19,8 @@ $nom=$array['nom_div'];
 $consulta="Insert into accion values ('{$_SESSION['usuario']}','Elimino Diversidad','$nom','$fecha')";
 $consu=mysql_query($consulta);
 if($result && $consu){
-header("location: agregar_diversidad.php");
-mysql_query("COMMIT");}
+
+mysql_query("COMMIT");header("location: agregar_diversidad.php");}
 else{ 
 mysql_query("rollback");
 header("location: ../mal.php?no_enviado=3");

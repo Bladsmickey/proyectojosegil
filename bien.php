@@ -31,6 +31,7 @@
 @$var4=$_GET['result2'];
 @$var5=$_GET['result3'];
 @$var6=$_GET['result4'];
+@$resta=$_GET['rest'];
 ?>
   <body>
 <div class="container">
@@ -39,6 +40,8 @@
 <form>
 
     <?php if($buen1==2){echo '<center><div class="text-justify alert alert-success"><center><h2><span lang="es">Enhorabuena!</span></h2></center>Registro exitoso, ahora puedes realizar los cambios respectivos a tu nivel de Usuario. Puedes seleccionar una opcion en el menu para realizar el respectivo control de estudiantes, por ejemplo si deseas generar un reporte dirigete al menu "Reportes".</br></br>En caso de que desees realizar la creacion de otra cuenta dirigete <a href="../admin/registro.php">aqui </a>.</div></center>';}?>
+
+    <?php if($resta==1){echo '<center><div class="text-justify alert alert-success"><center><h2><span lang="es">Enhorabuena!</span></h2></center>Se ha realizado con exito la restauracion de la base de datos. Recuerda realizar semanalmente un respaldo para mantener segura la informacion que manejas.</div></center>';}?>
     
     <?php if($buen2==2){echo '<center><div class="text-justify alert alert-success"><center><h2><span lang="es">Enhorabuena!</span></h2></center>Registro exitoso, ahora puedes realizar los cambios respectivos a tu nivel de Usuario. Puedes seleccionar una opcion en el menu para realizar el respectivo control de estudiantes, por ejemplo si deseas generar un reporte dirigete al menu "Reportes".</br></br>En caso de que desees realizar la creacion de otra cuenta dirigete <a href="../admin/registroo.php">aqui </a>.</div></center>';}?>
     

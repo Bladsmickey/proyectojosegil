@@ -181,6 +181,7 @@ glyphicon glyphicon-user"></span> Registro de profesores</a></li>
           <li class="list-group-item"><a href="../Admin/agregar_actividades.php"><span class="glyphicon glyphicon-tower"></span> Agregar actividades</a></li>
           <li class="list-group-item"><a href="../Admin/agregar_secciones.php"><span class="glyphicon glyphicon-tasks"></span>  Agregar secciones</a></li>
           <li class="list-group-item"><a href="../Admin/agregar_materia.php"> <span class="glyphicon glyphicon-book"></span> Agregar materias</a></li>   
+          <li class="list-group-item"><a href="../admin/camb_header.php"><span class="glyphicon glyphicon-minus"></span>Cambiar Cabecera</a></li>
           
 <?php if(@$_SESSION['nivel']=='Administrador'): ?>
          <li class="list-group-item"><a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-tasks"></span> Movimientos en el sistema</a><span class="caret"></span>
@@ -387,33 +388,6 @@ glyphicon glyphicon-th-list"></span> General</a></li>
   <?php endif; ?>      
 
 <?php if(@$_SESSION['nivel']=='Administrador' || @$_SESSION['nivel']=='Coordinador' || @$_SESSION['nivel']=='Secretaria'): ?>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> Menu administrador<b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="../Admin/registro.php">Registro de usuarios</a></li>
-          <li><a href="../Admin/registroo.php">Registro de profesores</a></li>
-          <li><a href="../Admin/habilitar.php">Habilitar/Deshabilitar profesores</a></li>
-          <li><a href="../Admin/Habvacunas.php">Agregar vacunas</a></li>
-          <li><a href="../Admin/Habenfermedades.php">Agregar enfermedades</a></li>
-          <li><a href="../Admin/agregar_diversidad.php">Agregar Diversidades Funcionales</a></li>
-          <li><a href="../Admin/agregar_actividades.php">Agregar actividades</a></li>
-          <li><a href="../Admin/agregar_secciones.php">Agregar secciones</a></li>
-          <li><a href="../Admin/agregar_materia.php">Agregar materias</a></li>
-<?php endif ?>       
-
-<?php if(@$_SESSION['nivel']=='Administrador'): ?>
-
-          <li class="dropdown-submenu"><a href="#">Movimientos en el sistema</a>
-          <ul class="dropdown-menu">
-          <li>
-          <li><a href="../Admin/bitacoras.php">General</a></li>
-          <li><a href="../Admin/por_fecha.php">Por fecha</a></li>
-          <li><a href="../Admin/por_usuario.php">Por usuario</a></li>
-          <li><a href="../Admin/por_mov.php">Por movimiento</a></li></ul>
-           </ul></li>
-<?php endif ?>
-
-<?php if(@$_SESSION['nivel']=='Administrador' || @$_SESSION['nivel']=='Coordinador' || @$_SESSION['nivel']=='Secretaria'): ?>
 
 <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['usuario']; ?><b class="caret"></b></a>
@@ -421,12 +395,12 @@ glyphicon glyphicon-th-list"></span> General</a></li>
           <li class="dropdown-submenu"><a href="#">Seguridad y respaldos</a>
           <ul class="dropdown-menu">
           <li>
-          <li><a href="../exportar.php">Exportar</a></li>
+          <li><a href="../respaldos/exportar.php">Exportar</a></li>
           <li class="dropdown-submenu"><a href="#">Restaurar</a>
 <ul class="dropdown-menu">
             <li>
                         
-       <form class="form-inline" role="form" method="get" action="importar.php">
+       <form class="form-inline" role="form" method="POST" action="../respaldos/importar.php">
   <div class="form-group">
             <input name="enviar2" type="file" class="botonsubir" id="enviar" required/>
   </div><button type="submit" class="btn btn-default form-control">Restaurar</button>            
@@ -443,6 +417,7 @@ glyphicon glyphicon-th-list"></span> General</a></li>
 
 
 <div class="row">
+  <div class="col-sm-12 col-lg-12 col-md-12">
     <div class="col-sm-3 col-md-3 user-details hidden-print">
             <div class="user-image">
                 <img src="http://www.gravatar.com/avatar/2ab7b2009d27ec37bffee791819a090c?s=100&d=mm&r=g" class="img-circle">

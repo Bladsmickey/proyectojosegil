@@ -33,6 +33,7 @@
 @$r=$_GET['r'];
 @$ins=$_GET['inscrito'];
 @$ins2=$_GET['noinscrito'];
+@$resta=$_GET['rest'];
 ?>
   <body>
 
@@ -62,6 +63,14 @@
 
    <center><p class="form-signin">Error: No estas registrado. Si llenastes mal el formulario intentalo de nuevo  <a href="javascript:history.back();" class="alert-link">Reintentar.</a>
   </br></br>Posiblemente ya estas registrado.</p></center></div>
+
+    <?php endif; ?>
+
+<?php if($resta==2):?>
+     <div class="alert alert-warning">
+     <center><h2 class="form-signin-heading"><span lang="es">Ups!</span></h2></center>
+
+   <center><p class="form-signin">Error: la restauracion de la base de datos no se ha realizado. Verifica si el archivo esta relacionado con el respaldado. 
 
     <?php endif; ?>
 
