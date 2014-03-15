@@ -14,6 +14,10 @@ if(@$_SESSION['usuario']!=NULL){
 
 <style type="text/css">
 
+body { 
+    background: url(../cream_dust.png) repeat 0 0;
+}
+
 .nopadding {
   margin-left: 50px;
   margin-bottom: 3%;
@@ -167,24 +171,26 @@ function delay(elem, src, delayTime){
       <div id="links">
           <div id="deco">
           <ul class="list-group" id="accordion">
-          <li class="list-group-item"><a href="../Admin/registro.php">Registro de usuarios</a></li>
-          <li class="list-group-item"><a href="../Admin/registroo.php">Registro de profesores</a></li>
-          <li class="list-group-item"><a href="../Admin/habilitar.php">Habilitar/Deshabilitar profesores</a></li>
-          <li class="list-group-item"><a href="../Admin/Habvacunas.php">Agregar vacunas</a></li>
-          <li class="list-group-item"><a href="../Admin/Habenfermedades.php">Agregar enfermedades</a></li>
-          <li class="list-group-item"><a href="../Admin/agregar_diversidad.php">Agregar Diversidades Funcionales</a></li>
-          <li class="list-group-item"><a href="../Admin/agregar_actividades.php">Agregar actividades</a></li>
-          <li class="list-group-item"><a href="../Admin/agregar_secciones.php">Agregar secciones</a></li>
-          <li class="list-group-item"><a href="../Admin/agregar_materia.php">Agregar materias</a></li>   
+          <li class="list-group-item"><a href="../Admin/registro.php"><span class="glyphicon glyphicon-plus"></span> Registro de usuarios</a></li>
+          <li class="list-group-item"><a href="../Admin/registroo.php"><span class="
+glyphicon glyphicon-user"></span> Registro de profesores</a></li>
+          <li class="list-group-item"><a href="../Admin/habilitar.php"><span class="glyphicon glyphicon-remove"></span> Habilitar/Deshabilitar profesores</a></li>
+          <li class="list-group-item"><a href="../Admin/Habvacunas.php"><span class="glyphicon glyphicon-pushpin"></span>  Agregar vacunas</a></li>
+          <li class="list-group-item"><a href="../Admin/Habenfermedades.php"><span class="glyphicon glyphicon-asterisk"></span> Agregar enfermedades</a></li>
+          <li class="list-group-item"><a href="../Admin/agregar_diversidad.php"><span class="glyphicon glyphicon-eye-close"></span> Agregar Diversidades Funcionales</a></li>
+          <li class="list-group-item"><a href="../Admin/agregar_actividades.php"><span class="glyphicon glyphicon-tower"></span> Agregar actividades</a></li>
+          <li class="list-group-item"><a href="../Admin/agregar_secciones.php"><span class="glyphicon glyphicon-tasks"></span>  Agregar secciones</a></li>
+          <li class="list-group-item"><a href="../Admin/agregar_materia.php"> <span class="glyphicon glyphicon-book"></span> Agregar materias</a></li>   
           
 <?php if(@$_SESSION['nivel']=='Administrador'): ?>
-         <li class="list-group-item"><a class="dropdown-toggle" data-toggle="dropdown">Movimientos en el sistema</a><span class="caret"></span>
+         <li class="list-group-item"><a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-tasks"></span> Movimientos en el sistema</a><span class="caret"></span>
           
           <ul class="dropdown-menu" role="menu">
-          <li><a href="../Admin/bitacoras.php">General</a></li>
-          <li><a href="../Admin/por_fecha.php">Por fecha</a></li>
-          <li><a href="../Admin/por_usuario.php">Por usuario</a></li>
-          <li><a href="../Admin/por_mov.php">Por movimiento</a></li></ul>
+          <li><a href="../Admin/bitacoras.php"><span class="
+glyphicon glyphicon-th-list"></span> General</a></li>
+          <li><a href="../Admin/por_fecha.php"><span class="glyphicon glyphicon-calendar"></span> Por fecha</a></li>
+          <li><a href="../Admin/por_usuario.php"><span class="glyphicon glyphicon-user"></span> Por usuario</a></li>
+          <li><a href="../Admin/por_mov.php"><span class="glyphicon glyphicon-hand-right"></span>  Por movimiento</a></li></ul>
            
 </li>
 

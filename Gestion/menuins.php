@@ -653,6 +653,11 @@ No<input type="radio" name="becaa" id="becano" value="no">
  <div class="form-horizontal">
   <div class="checkbox">
 <?php
+
+echo '<center>';
+echo '<h4>Vacunas habilitadas </h4>';
+echo '</center">';
+echo '<br>';
 require("../conexion.php");
 $cons="Select cod_va,nom_va from `vacuna`";
 $conss=mysql_query($cons);
@@ -660,9 +665,7 @@ $d=mysql_num_rows($conss);
 if($conss){
 if($d!=0){
 mysql_query("COMMIT");
-echo '<center>';
-echo '<h4>Vacunas habilitadas </h4>';
-echo '</center">';
+
 while($row=mysql_fetch_array($conss)){
 echo '<div class="col-lg-3 col-sm-3">';
 echo '<div class="form-group">';
@@ -699,7 +702,9 @@ $d=mysql_num_rows($conss);
 if($conss){
 if($d!=0){
 mysql_query("COMMIT");
+echo'<center>';
 echo '<h4>Actividades habilitadas </h4>';
+echo'</center><br>';
 while($row=mysql_fetch_array($conss)){
   echo '<div class="col-lg-4 col-sm-4">';
 echo '<label class="checkbox-inline">';
@@ -736,7 +741,9 @@ $d=mysql_num_rows($conss);
 if($conss){
 if($d!=0){
 mysql_query("COMMIT");
+echo '<center>';
 echo '<h4>Enfermedades habilitadas </h4>';
+echo '</center><br>';
 while($row=mysql_fetch_array($conss)){
   echo '<div class="col-lg-3 col-sm-3">';
 echo '<div class="form-group">';
@@ -762,7 +769,7 @@ mysql_query("rollback");}
         <center>
 
 <legend> <h4>1. diversidades presentadas por el estudiante</h4></legend>
- <div class="form-inline">
+ <div class="form-horizontal">
   <div class="checkbox">
 <?php
 require("../conexion.php");
@@ -772,11 +779,17 @@ $d=mysql_num_rows($conss);
 if($conss){
 if($d!=0){
 mysql_query("COMMIT");
+echo '<center>';
 echo '<h4>Diversidades funcionales habilitadas </h4>';
+echo '</center><br>';
 while($row=mysql_fetch_array($conss)){
-echo '<label class="checkbox-inline">';
+    echo '<div class="col-lg-3 col-sm-3">';
+echo '<div class="form-group">';
+echo '<label class="checkbox">';
 echo "<td><input name='fun[]' id='fun' type='checkbox' value='".$row["cod_div"]."'></td><td>".$row["nom_div"]."</td>";
-echo '</label>';}
+echo '</label>';
+echo '</div>';echo '</div>';
+}
 }}if($d==0){
 echo '<h4>No exiten diversidades habilitadas </h4>';
 mysql_query("rollback");}
