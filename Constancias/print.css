@@ -1,0 +1,21 @@
+
+
+@media print {
+
+body {	
+
+	margin-top: 4cm;
+	margin-bottom: 2cm;
+	margin-right: 2cm;
+	margin-left: 3cm;
+
+  color : #000000;
+  background : #ffffff;
+  font-family : "Times New Roman", Times, serif;
+  font-size : 12pt;
+}
+
+
+
+
+}
