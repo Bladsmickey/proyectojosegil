@@ -52,7 +52,7 @@ if($fechah==10){$mesh="Octubre";}
 if($fechah==11){$mesh="Noviembre";}
 if($fechah==12){$mesh="Diciembre";}
 $nuevo=strtoupper($resultado['nome']." ".$resultado['apee']);
-$nuevo2=strtoupper($resultado['nombre_dir']);
+$nuevo2=strtoupper($resultado['nombres']." ".$resultado['apellidos']);
 ?>
 
 
@@ -65,28 +65,46 @@ $nuevo2=strtoupper($resultado['nombre_dir']);
 <TITLE>Constancia de Retiro</TITLE>
 
 <link href="../dist/css/bootstrap.css" rel="stylesheet" type="text/css">
-<link href="../dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="print.css" media="print">
+<STYLE type="text/css">
+.planilla{
+  font-family: arial;
+  font-size: 14px;
+
+}
+
+h3{
+  font-family: arial;
+}
+
+</STYLE>
+
 </HEAD>
 
 <BODY><div class="container">
   <?php require('../header.php'); ?>
-    <div class="col-xs-8 nopadding">
+    <div class="col-md-8 nopadding">
 
 
-<P class="text-center">Constancia de Retiro</P>
-<P class="text-justify">Quien suscribe Director(e) <?php echo $nuevo2; ?> titular de la la Cédula de Identidad N° <?php echo $resultado['ced_dir']; ?>; Director(e) del <?php echo $resultado['nombre']; ?> que funciona en Valle de la pascua Edo. Guarico, hace constar que el alumno <?php echo $nuevo; ?> Titular de la Cédula de Identidad V-<?php echo $resultado['ced_e']; ?> Nacido el <?php echo $fecha2[2]; ?> de <?php echo $mes; ?> de <?php echo $fecha2[0]; ?> en la Ciudad de <?php echo $resultado['lugar_nac']; ?> <? echo $resultado['estado']; ?> fue retirado del plantel por el siguiente motivo <?php echo $resultado['motivo']; ?> en la escolaridad <?php echo date('Y'); ?> - <?php echo date('Y')+1; ?>. </P>
+<h3><P class="text-center">Constancia de Retiro</P></h3>
+
+<div class="col-lg-12 col-sm-12 planilla">
+
+<P class="text-justify">Quien suscribe Director(e) <?php echo $nuevo2; ?> titular de la la Cédula de Identidad N° <?php echo $resultado['ced_dir']; ?>; Director(e) del <?php echo $resultado['nombre']; ?> que funciona en Valle de la pascua Edo. Guarico, hace constar que el alumno <?php echo $nuevo; ?> Titular de la Cédula de Identidad V-<?php echo $resultado['ced_e']; ?> Nacido el <?php echo $fecha2[2]; ?> de <?php echo $mes; ?> de <?php echo $fecha2[0]; ?> en la Ciudad de <?php echo $resultado['lugar_nac']; ?> <? echo $resultado['estado']; ?> fue retirado del plantel por el siguiente motivo <?php echo $resultado['motivo']; ?> en la escolaridad <?php echo date('Y'); ?> - <?php echo date('Y')+1; ?>. 
+<br><br>
+Constancia que se expide a petición de parte interesada en Valle de la pascua, a los <?php echo date("d"); ?> dias del mes de <?php echo $mesh; ?> del a&ntilde;o <?php echo date("Y"); ?>.</P>
+
+ <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<P class="text-center">______________________<br>
+Firma y sello<br>
+Lcdo. <?php echo $resultado['nombres']; echo " "; echo $resultado['apellidos']; ?><br>
+Director(a)</P>
+<P class="text-center">__________________________________________________________________________<br>
+Estado Guarico, Ciudad Valle De La Pascua, Municipio Leonardo Infante, Colegio Bolivariano Jose Gil Fortoul.</P>
 
 
-<P class="text-left">Constancia que se expide a petición de parte interesada en Valle de la pascua, a los <?php echo date("d"); ?> dias del mes de <?php echo $mesh; ?> del a&ntilde;o <?php echo date("Y"); ?>.</P>
-
-<center>
-<P>______________________</P>
-<P>Firma y sello</P>
-<P>Lcdo. <?php echo $resultado['nombre_dir']; ?></P>
-<P >Director(e)</P>
-</center></br>
-
+</div></br>
 
 <center>
 <input name="Button1" type="button" value="Imprimir constancia" onclick="window.print()" class="btn btn-info oculto hidden-print" />

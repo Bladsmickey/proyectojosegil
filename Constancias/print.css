@@ -8,14 +8,12 @@
 size: letter;
 margin:0px;
 
-
+  margin-top: 3em; 
+  margin-left: 3em; 
+  margin-right: 4em; 
+  margin-bottom: 3em;
         }
-@page :first { 
-	margin-top: 3em; 
-	margin-left: 3em; 
-	margin-right: 4em; 
-	margin-bottom: 3em;
-} 
+
         body 
         {
             background-color:#FFFFFF; 
@@ -23,12 +21,24 @@ margin:0px;
 
        p{
        	font-family: "Times New Roman", Times, serif;
-       	font-size: 1.2em;
+       	font-size: 1.291em;
        	line-height:1.5em;
        }
 
+       h3,h4{
+        font-family: "Times New Roman", Times, serif;
+       }
+
 .grande{
-  font-size: 20pt;
+  font-size: 1.5em;
+}
+
+.well{
+
+
+  background-color: #ffffff;
+  border: 0px solid #e3e3e3;
+  border-radius: 0px;
 }
 
 

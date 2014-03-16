@@ -1,6 +1,6 @@
 <link href="../dist/css/lobster.css" rel="stylesheet" type="text/css">
 <link href="../dist/css/Cabin.css" rel="stylesheet" type="text/css">
-
+<link rel="stylesheet" type="text/css" href="../constancias/print.css" media="print">
 
 <?php
 @session_start();
@@ -163,7 +163,7 @@ function delay(elem, src, delayTime){
 
 <div id="box" class="hised hidden-print">
       <ul id="tab">
-          <li>
+          <li >
               <img id="arrow" onclick="toggle('box');" src="../src/arrowleft.png" data-toggle="tooltip" data-placement="left" title="Menu Administrador">
           </li>
       </ul>
@@ -182,6 +182,7 @@ glyphicon glyphicon-user"></span> Registro de profesores</a></li>
           <li class="list-group-item"><a href="../Admin/agregar_secciones.php"><span class="glyphicon glyphicon-tasks"></span>  Agregar secciones</a></li>
           <li class="list-group-item"><a href="../Admin/agregar_materia.php"> <span class="glyphicon glyphicon-book"></span> Agregar materias</a></li>   
           <li class="list-group-item"><a href="../admin/camb_header.php"><span class="glyphicon glyphicon-minus"></span>Cambiar Cabecera</a></li>
+          <li class="list-group-item"><a href="../admin/actualizar_director.php"><span class="glyphicon glyphicon-pencil"></span> Actualizar directivo</a></li>
           
 <?php if(@$_SESSION['nivel']=='Administrador'): ?>
          <li class="list-group-item"><a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-tasks"></span> Movimientos en el sistema</a><span class="caret"></span>

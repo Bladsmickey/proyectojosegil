@@ -33,8 +33,13 @@ header("location: ../mal.php?asig=6");
 }else if(isset($_GET['menc'])){
 $con2="Update secciones set anho_est = '$anho', mencion = '$mencion', seccion = '$seccion', habil = 'Si' where ce_e = '$cedula'";
 $conn2=mysql_query($con2);
+
+$con23="Update estudiante set condicion = 'Normal' where ced_e = '$cedula'";
+$conn23=mysql_query($con23);
+
 $consulta="Insert into accion values ('{$_SESSION['usuario']}','Asigno al estudiante','$variable','$fecha')";
 $consu=mysql_query($consulta);
+header("location: ../bien.php?asig=5");
 }else{
 $con2="Update secciones set anho_est = '$anho', mencion = 'Null', seccion = '$seccion', habil = 'Si' where ce_e = '$cedula'";
 $conn2=mysql_query($con2);

@@ -11,8 +11,7 @@
     <title>Reintegrar estudiante</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="dist/css/bootstrap.css" rel="stylesheet">
-        <link href="dist/css/main.css" rel="stylesheet">
+    <link href="../dist/css/bootstrap.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -56,7 +55,7 @@ function modificarEstado(){
 
   <body>
 <?php
-require("conexion.php");
+require("../conexion.php");
 $cons="SELECT DISTINCT seccion FROM seccion_cont where seccion != 'NT' order by seccion";
 $con=mysql_query($cons);
 $b=mysql_num_rows($con);
@@ -68,7 +67,7 @@ mysql_query("rollback");
 $exito=1;}
 ?> 
     <div class="container">
-<?php require('header.php'); ?>
+<?php require('../header.php'); ?>
 
 <div class="col-md-9 well">
 
@@ -105,7 +104,7 @@ echo '</select>';}
     </div>    </center>    
 </form>
 
-    </div><?php require('footer.html') ?></div> <!-- /container -->
+    </div><?php require('../footer.html') ?></div> <!-- /container -->
     
     
 

@@ -12,7 +12,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../dist/css/bootstrap.css" rel="stylesheet">
-
+<link rel="stylesheet" type="text/css" href="../constancias/print.css" media="print">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>

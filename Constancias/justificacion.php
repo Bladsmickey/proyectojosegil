@@ -49,28 +49,59 @@ if($fechah==12){$mesh="Diciembre";}
 <TITLE>Justificacion de Retiro</TITLE>
 
 <link href="../dist/css/bootstrap.css" rel="stylesheet" type="text/css">
-<link href="../dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="../dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="print.css" media="print">
+
+<STYLE type="text/css">
+.planilla{
+  font-family: arial;
+  font-size: 14px;
+
+}
+
+h3{
+  font-family: arial;
+}
+
+</STYLE>
+
 </HEAD>
 
 <BODY>
 
 	       <div class="container">
   <?php require('../header.php'); ?>
-    <div class="col-xs-8 nopadding">
+    <div class="col-md-8 nopadding">
 
-<P class="text-center">Justificacion de Retiro</P>
-<P class="text-justify">Hoy <?php echo date("d"); ?> de <?php echo $mesh; ?> de <?php echo date("Y"); ?>, Yo, <?php echo $resultado['nom']; ?> <?php echo $resultado['ape']; ?> C.I Nº V-<?php echo $resultado['ci_r']; ?> Representante legal del estudiante <?php echo $resultado['nome']; ?> <?php echo $resultado['apee']; ?> C.I V-<?php echo $resultado['ced_e']; ?>, quien curso el <?php echo $resultado['anho_est']; ?> a&ntilde;o <?php echo $menc; ?> en la escolaridad <?php echo date("Y"); ?> - <?php echo date("Y")+1; ?>, justifico su retiro del Plantel por el siguiente motivo <?php echo $resultado['motivo']; ?>.</P>
 
-<P class="text-left">Mi representado sera inscrito en <?php echo $resultado['inst_nueva']; ?>.</P>
-<P class="text-left">______________________</P>
-<P class="text-left">Firma del representante</P>
-<P class="text-left">Cedula de Identidad V-<?php echo $resultado['ci_r']; ?></P>
-</br></br>
-<P class="text-left">Recibido por: ________________________________</P>
-<P class="text-left">Cedula de Identidad: ___________________________</P>
-<P class="text-left">Firma: ___________________________</P></br></br>
+  <div class="col-lg-12 col-sm-12 planilla visible-print">
+
+<h3><P class="text-center">Justificacion de Retiro</P></h3>
+<P class="text-justify">Hoy <?php echo date("d"); ?> de <?php echo $mesh; ?> de <?php echo date("Y"); ?>, Yo, <?php echo $resultado['nom']; ?> <?php echo $resultado['ape']; ?> C.I Nº V-<?php echo $resultado['ci_r']; ?> Representante legal del estudiante <?php echo $resultado['nome']; ?> <?php echo $resultado['apee']; ?> C.I V-<?php echo $resultado['ced_e']; ?>, quien curso el <?php echo $resultado['anho_est']; ?> a&ntilde;o <?php echo $resultado['mencion']; ?> en la escolaridad <?php echo date("Y"); ?> - <?php echo date("Y")+1; ?>, justifico su retiro del Plantel por el siguiente motivo: <?php echo $resultado['motivo']; ?>.</P>
+<P class="text-left">Mi representado sera inscrito en <?php echo $resultado['inst_nueva']; ?>.</P><br><br>
+
+
+<div class="col-lg-6 col-sm-6">
+
+<P class="text-center">
+______________________<br>
+Firma del representante<br><br>
+Cedula de Identidad V-<?php echo $resultado['ci_r']; ?></P>
+
+</div>
+<br><br><br><br><br><br>
+<div class="col-lg-6 col-sm-6">
+
+<P class="col-lg-2 col-sm-2">Recibido por:</p> 
+<p class="col-lg-4 col-sm-4">________________________________</p>
+<P class="col-lg-2 col-sm-2">Cedula de Identidad:</p> 
+<p class="col-lg-4 col-sm-4"> ___________________________</p>
+<P class="col-lg-2 col-sm-2">Firma:</p> 
+<p class="col-lg-4 col-sm-4"> ___________________________</P>
+
+</div>
+
+
+</div>
 <center>
 <input name="Button1" type="button" value="Imprimir constancia" onclick="window.print()" class="btn btn-info oculto hidden-print" />
 

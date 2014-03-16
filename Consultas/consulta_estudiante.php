@@ -12,7 +12,9 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../dist/css/bootstrap.css" rel="stylesheet">
-    <link href="../dist/css/main.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../constancias/print.css" media="print">
+
 
 
 
@@ -34,7 +36,7 @@
 $cedula=$_GET['cedulae'];
 require("../conexion.php");
 mysql_query("SET NAMES 'utf8'");
-$cons="Select nome,apee,ced_e,edad,lugar_nac,direccion,telefono,seccion,anho_est,mencion,turno from estudiante,secciones where estudiante.ced_e='$cedula' and secciones.habil='Si'";
+$cons="Select * from estudiante,secciones where estudiante.ced_e='23123123' and ce_e ='23123123' and secciones.habil='Si'";
 $con=mysql_query($cons);
 $conss="Select nom,edad_r,tlf_rep,pare_r,ape,ci_r,profesion,dir_tra,tlf_tr from representante where ci_e='$cedula'";
 $conn=mysql_query($conss);
@@ -75,7 +77,7 @@ $exito=1;
 ?>    
 
 <?php if($s!=0 && $exito==1){
-echo '<center><h3>Datos relacionados al estudiante</h3></br></center>';
+echo '<h3><p class="text-center">Datos relacionados al estudiante</p></h3></br>';
 echo '<legend> <h4>Datos del estudiante</h4></legend>';
 
 echo sprintf("<table class='table table-bordered pull-left'>");

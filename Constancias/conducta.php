@@ -85,7 +85,7 @@ h3{
               <?php echo date("d"); ?> dias del mes de <?php echo $mesh; ?> del a&ntilde;o <?php echo date("Y"); ?>.</P>
 
 
-              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
 <P class="text-center">______________________<br>
@@ -93,7 +93,7 @@ Firma y sello<br>
 Lcdo. <?php echo $resultado['nombres']; echo " "; echo $resultado['apellidos']; ?><br>
 Director(a)</P>
 <P class="text-center">__________________________________________________________________________<br>
-Estado Guarico, Ciudad Valle De La Pascua, Municipio Leonardo Infante</P>
+Estado Guarico, Ciudad Valle De La Pascua, Municipio Leonardo Infante, Colegio Bolivariano Jose Gil Fortoul.</P>
 </div><br>
 
 
