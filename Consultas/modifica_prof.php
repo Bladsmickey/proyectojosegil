@@ -40,20 +40,33 @@ $c2=$con3['tlf_prof'];
 
      <div class="col-md-8 well nopadding">
 
+  <legend><center><h3>Modifica los campos que necesites</h3></center></legend>
 
 
 
-      <form class="form-group" id="form2" name="form2" method="get" action="actualiza_prof.php">
-        <h4 class="form-signin-heading"><span lang="es">Modifica los campos que necesites</span></h4>
-<?php echo sprintf("<input type='hidden' id='cedula' name='cedula' value='%s'>",$cedula); ?>
+      <form class="form-horizontal" id="form2" name="form2" method="get" action="actualiza_prof.php">
+      <?php echo sprintf("<input type='hidden' id='cedula' name='cedula' value='%s'>",$cedula); ?>
+
 <div class="form-group">
+  <label class="col-lg-2">Nombre</label>
+  <div class="col-lg-4 col-sm-4">
 <?php echo sprintf('<input type="text" pattern="[|^[a-zA-Z ñÑáéíóúüç]*$|]" id="nombre" name="nombre" class="form-control" placeholder="Nombres" required="required" autofocus value="%s"/>', $nombre); ?></div>
+
+
+  <label class="col-lg-2">Apellidos</label>
+  <div class="col-lg-4 col-sm-4">
+<?php echo sprintf('<input type="text" pattern="[|^[a-zA-Z ñÑáéíóúüç]*$|" id="apellido" name="apellido" class="form-control" placeholder="Apellidos" required="required" value="%s"/>', $apellido); ?></div></div>
+
 <div class="form-group">
-<?php echo sprintf('<input type="text" pattern="[|^[a-zA-Z ñÑáéíóúüç]*$|" id="apellido" name="apellido" class="form-control" placeholder="Apellidos" required="required" value="%s"/>', $apellido); ?></div>
+  <label class="col-lg-2">Direccion</label>
+    <div class="col-lg-10 col-sm-10">
+<?php echo sprintf('<input type="text" name="direcc" class="form-control" id="direccion" placeholder="Dirección" required="required" value="%s"/>', $c1); ?></div></div>
+
 <div class="form-group">
-<?php echo sprintf('<input type="text" name="direcc" class="form-control" id="direccion" placeholder="Dirección" required="required" value="%s"/>', $c1); ?></div>
-<div class="form-group">
-<?php echo sprintf('<input type="text" pattern="\d*" maxlength="12" name="telef" id="telef" class="form-control" placeholder="Teléfono (Solo Números)" maxlength="11" required="required" value="%s"/>', $c2); ?></div>
+  <label class="col-lg-2">Telefono</label>
+      <div class="col-lg-10 col-sm-10">
+<?php echo sprintf('<input type="text" pattern="\d*" maxlength="12" name="telef" id="telef" class="form-control" placeholder="Teléfono (Solo Números)" maxlength="11" required="required" value="%s"/>', $c2); ?></div></div>
+
     <br>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Actualizar datos</button>
       </form>

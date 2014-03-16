@@ -1,4 +1,4 @@
-﻿
+
 <!DOCTYPE html5>
 <html lang="es">
   <head>
@@ -69,29 +69,41 @@ $exito=1;}
 
   <div class="container">
   <?php require('../header.php'); ?>
-    <div class="col-xs-8 well nopadding">
-      <form class="form-signin" id="form2" name="form2" method="get" action="asigna.php">
-        <center><h2 class="form-signin-heading"><span lang="es">Rellena los siguientes campos</span></h2></center>
-        <input type="text" maxlength="8" pattern="[0-9]+" id="cedula" name="cedulae" placeholder="Ingrese cedula (solo numeros)" title="Solo numeros en este campo. Ej: 11222333" class="form-control" required="required"><br>
-<label class="radio-inline" id="vacuna">1ero<input name="vacu" type="radio" id="1ero" value="1ero" >	</label><label class="radio-inline" id="vacuna">2do<input type="radio" name="vacu" id="2do" value="2do"></label> </label><label class="radio-inline" id="vacuna">3ro<input type="radio" name="vacu" id="3ro" value="3ro"></label> </label><label class="radio-inline" id="vacuna">4to<input type="radio" name="vacu" id="4to" value="4to"></label></label><label class="radio-inline" id="vacuna">5to<input type="radio" name="vacu" id="5to" value="5to"></label></br>
-     <label for="Select3"></label>
- <select name="menc" id="mencion" class="form-control" required="required">
-	<option value="">Menci&oacute;n</option>
-	<option value="Ciencias">Ciencias</option>
-	<option value="Humanidades">Humanidades</option>
-	<option value="Contabilidad">Contabilidad</option>
-        </select>
+    <div class="col-xs-8 well nopadding">    
+        <center><h2><span lang="es">Rellena los siguientes campos</span></h2></center>
+      <form class="form-horizontal" id="form2" name="form2" method="get" action="asigna.php">
+ <label class="col-lg-2 col-sm-2">C.I.N.V</label>
+        <div class="col-lg-10 col-sm-10">
+<input type="text" maxlength="8" pattern="[0-9]+" id="cedula" name="cedulae" placeholder="Ingrese cedula (solo numeros)" title="Solo numeros en este campo. Ej: 11222333" class="form-control" required="required">
+</div>
+<p class="text-center">
+<label class="radio-inline" id="vacuna">1ero<input name="vacu" type="radio" id="1ero" value="1ero" ></label><label class="radio-inline" id="vacuna">2do<input type="radio" name="vacu" id="2do" value="2do"></label> </label><label class="radio-inline" id="vacuna">3ro<input type="radio" name="vacu" id="3ro" value="3ro"></label> </label><label class="radio-inline" id="vacuna">4to<input type="radio" name="vacu" id="4to" value="4to"></label></label><label class="radio-inline" id="vacuna">5to<input type="radio" name="vacu" id="5to" value="5to"></label></p>
+
+
+     <label for="Select3" class="col-lg-2 col-sm-2">Mencion</label>
+
+                            <div class="col-lg-10 col-sm-10">
+                             <select name="menc" id="mencion" class="form-control" required="required">
+                            	<option value="">Menci&oacute;n</option>
+                            	<option value="Ciencias">Ciencias</option>
+                            	<option value="Humanidades">Humanidades</option>
+                            	<option value="Contabilidad">Contabilidad</option>
+                                    </select></div>
+<br><br>
 <?php if($exito==0 && $b!=0){
-echo '<label for="Select4"></label>';
+echo '<label for="Select4" class="col-lg-2 col-sm-2">Seccion</label>';
+echo '<div class="col-lg-10 col-sm-10">';
 echo '<select name="seccion" class="form-control" required="required">';
 echo '<option value="">Secci&oacute;n</option>';
 while($datos=mysql_fetch_assoc($con)){
 echo sprintf("<option>%s</option>",$datos['seccion']);
 }
-echo '</select>';}
-?></br>
-<button class="btn btn-lg btn-primary btn-block" type="submit">Asignar</button>
-            </form>
+echo '</select></div>
+';}
+?></br></br>
+<p class="text-center">
+<button class="btn btn-primary " type="submit">Asignar</button>
+         </p>   </form>
 
     </div> <!-- /container -->
     

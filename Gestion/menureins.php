@@ -136,33 +136,44 @@ header("location: ../mal.php?noinscrito=1");
 	  <legend>  <h4>1. Datos del representante</h4></legend>
 	   
 	  <div class="form-group">
-	  <label for="fecha" class="control-label">Estado Civil</label>
+	  <div class="col-lg-2 col-sm-2"><label for="fecha" class="control-label">Estado Civil</label></div>
+    <div class="col-lg-10 col-sm-10">
     <select id="civil" name="civil" class="form-control"><option>Soltero/a</option><option>Casado/a</option><option>Divorciado/a</option><option>Viudo/a</option><option>Separado/a</option></select>
-	  </div>
+	  </div></div>
     
     
     <legend> <h4>2. Datos de profesion</h4></legend>
         <div class="form-group">
-                                          <label for="profesionr" class="control-label">Profesion</label><input name="profesionr" id="profesionr" value="<?php echo $resultado['profesion'];?>" type="text" class="form-control" onkeypress="return validar(event,this)"/>
-	  </div>&nbsp;<div class="form-group"><label for="lugartr" class="control-label">Lugar de trabajo</label><input name="lugartr" id="lugartr" value="<?php echo $resultado['lugar_tr'];?>" type="text" class="form-control" onkeypress="return validar(event,this)"/>
-	  </div>&nbsp;<div class="form-group"><label for="diretr" class="control-label">Direccion de trabajo</label><input name="diretr" id="diretr" value="<?php echo $resultado['dir_tra'];?>" type="text" class="form-control" onkeypress="return validar(event,this)"/>
-	  </div>&nbsp;</br></br><label for="telefonor" class="control-label">Telefono de trabajo</label><div class="form-group">
+                                          <label for="profesionr" class="col-lg-2 col-sm-2 control-label">Profesion</label>
+      <div class="col-lg-10 col-sm-10"><input name="profesionr" id="profesionr" value="<?php echo $resultado['profesion'];?>" type="text" class="form-control" onkeypress="return validar(event,this)"/>
+	  </div></div>&nbsp;<div class="form-group"><label for="lugartr" class="col-lg-2 col-sm-2 control-label">Lugar de trabajo</label>    <div class="col-lg-10 col-sm-10"><input name="lugartr" id="lugartr" value="<?php echo $resultado['lugar_tr'];?>" type="text" class="form-control" onkeypress="return validar(event,this)"/>
+	  </div></div>&nbsp;<div class="form-group"><label for="diretr" class="col-lg-2 col-sm-2 control-label">Direccion de trabajo</label>    <div class="col-lg-10 col-sm-10"><input name="diretr" id="diretr" value="<?php echo $resultado['dir_tra'];?>" type="text" class="form-control" onkeypress="return validar(event,this)"/>
+	  </div></div>&nbsp;
+
+
+
+   
+    <div class="form-group">
+ <label for="telefonor" class="col-lg-2 col-sm-2 control-label">Telefono de trabajo</label>
+    <div class="col-lg-3 col-sm-3">
 <select name="codigo" id="codigo" class="form-control"><option value="0416">0416</option><option value="0426">0426</option><option value="0414">0414</option><option value="0424">0424</option><option value="0412">0412</option><option value="0235">0235</option>
-</select></div>
-<div class="form-group">
+</select></div> <div class="col-lg-7 col-sm-7">
+
 <input maxlength="7" name="telefonor" id="telefonor" type="text" pattern="\d*" value="<?php echo $resultado['tlf_tr'];?>" required class="form-control"/>
-	  </div>
+	  </div></div>
     
     
     <legend> <h4>3. Datos de contacto</h4></legend>
-     <div class="form-group"><label for="direccr" class="control-label">Direccion</label>
-   <input name="direccr" id="direccr" value="<?php echo $resultado['dir_rep'];?>" type="text" class="form-control" onkeypress="return validar(event,this)"/></div>
-	  <label for="telrr" class="control-label">Tel&eacute;fono de Residencia</label>
-<div class="form-group">
+     <div class="form-group"><label for="direccr" class="col-lg-2 col-sm-2 control-label">Direccion</label>
+       <div class="col-lg-10 col-sm-10"><input name="direccr" id="direccr" value="<?php echo $resultado['dir_rep'];?>" type="text" class="form-control" onkeypress="return validar(event,this)"/></div></div>
+	<div class="form-group">  
+    <label for="telrr" class="col-lg-2 col-sm-2 control-label">Tel&eacute;fono de Residencia</label>
+<div class="col-lg-3 col-sm-3">
 <select name="codigo2" id="codigo2" class="form-control"><option value="0235">0235</option><option value="0246">0246</option><option value="0238">0238</option><option value="0247">0247</option>
 </select></div>
-<div class="form-group">
-<input maxlength="7" name="telrr" id="telrr" pattern="\d*" value="<?php echo $resultado['tlf_rep'];?>" required type="text" class="form-control"/>
+
+<div class="col-lg-7 col-sm-7">
+<input maxlength="7" name="telrr" id="telrr" pattern="\d*" value="<?php echo $resultado['tlf_rep'];?>" required type="text" class="form-control"/></div>
       </div>
 
   <center>
@@ -177,11 +188,11 @@ header("location: ../mal.php?noinscrito=1");
 <div class="tab-pane" id="estudiante">
 
 <br>
-    <legend><h4>1. Escolaridad</h4></legend><center>
+    <legend><h4>1. Escolaridad</h4></legend>
 <div class="form-group">
 <div class="control-label">
-<center>
 
+<p class="text-center">
   <label class=".radio-inline" id="anoestu">
 	1er a&ntilde;o          <input required name="anoestu" type="radio" id="inline1" value="1"/>
 </label>
@@ -197,45 +208,56 @@ header("location: ../mal.php?noinscrito=1");
  </label> <label class=".radio-inline" id="anoestu">
 
 	5to a&ntilde;o          <input required name="anoestu" type="radio" id="inline5" value="5"/> <br>
-</label>	
-</center>
+</label>	</p>
+
 </div></div>
 
  <div class="form-group">
 
+<label class="col-lg-2 col-sm-2 control-label">Mencion</label>
+
+ <div class="col-lg-10 col-sm-10">
 <select name="mencion" id="mencion" class="form-control" required>
-				<option value=""></option>
 				<option value="Ciencias">Ciencias</option>
 				<option value="Humanidades">Humanidades</option>
 				<option value="Contabilidad">Contabilidad</option>
-			</select></div></center>
+			</select></div></div>
 
-<legend><h4>2. Estudiante a reinscribir</h4></legend><center>
+<legend><h4>2. Estudiante a reinscribir</h4></legend>
    <div class="form-group">
+    <label for="" class="col-lg-2 col-sm-2">C.I.N.V</label>
+    <div class="col-lg-3 col-sm-3">
 <select name="nacionn" id="nacionn" class="form-control"><option value="V-">V-</option><option value="E-">E-</option>
 	</select> </div>
      
-    <div class="form-group">
+<div class="col-lg-7 col-sm-7">
     <input name="cedulan" type="text" maxlength="9" class="form-control" value="<?php echo $resultado['ced_e'];?>" placeholder="Ej: 1111111" required/>
-	</div>
-	</center>
+	</div></div>
+
 
     <legend><h4>3. Informacion del estudiante y datos de contacto</h4></legend>
 
-	<div class="form-group"><label for="diren" class="control-label">Direccion</label><input name="diren" id="diren" type="text" value="<?php echo $resultado['direccion'];?>" placeholder="Direccion" class="form-control" onkeypress="return validar(event,this)"/>
-	</div>&nbsp;
+	<div class="form-group"><label for="diren" class="col-lg-2 col-sm-2 control-label">Direccion</label>
+    <div class="col-lg-10 col-sm-10">
+    <input name="diren" id="diren" type="text" value="<?php echo $resultado['direccion'];?>" placeholder="Direccion" class="form-control" onkeypress="return validar(event,this)"/>
+	</div></div>&nbsp;
 
-<div class="form-group"><label for="telen" class="control-label">Telefono</label>
-
+<div class="form-group"><label for="telen" class="col-lg-2 col-sm-2 control-label">Telefono</label>
+    <div class="col-lg-3 col-sm-3">
 <select name="codigo3" id="codigo3" class="form-control"><option value="0416">0416</option><option value="0426">0426</option><option value="0414">0414</option><option value="0424">0424</option><option value="0412">0412</option><option value="0235">0235</option>
-</select>
-    <input maxlength="7" name="telen" id="telen" type="text" placeholder="Telefono" value="<?php echo $resultado['telefono'];?>" class="form-control"/></div>
-<div class="form-group"><label for="telem" class="control-label">Telefono de emergencia</label>
-
+</select></div>
+    <div class="col-lg-7 col-sm-7">
+    <input maxlength="7" name="telen" id="telen" type="text" placeholder="Telefono" value="<?php echo $resultado['telefono'];?>" class="form-control"/></div></div>
+<div class="form-group"><label for="telem" class="col-lg-2 col-sm-2 control-label">Telefono de emergencia</label>
+    <div class="col-lg-3 col-sm-3">
 <select name="codigo4" id="codigo4" class="form-control"><option value="0416">0416</option><option value="0426">0426</option><option value="0414">0414</option><option value="0424">0424</option><option value="0412">0412</option><option value="0235">0235</option>
-</select>  
-<input name="teleemer" id="teleemer" type="text" placeholder="Telefono en caso de Emergencia" value="<?php echo $resultado['tlf_res'];?>" maxlength="7"pattern="\*d" title="Solo numeros"  class="form-control"/></div>&nbsp; <div class="form-group"><label for="parentescor" class="control-label">Parentesco</label>
-    
+</select>  </div>
+
+    <div class="col-lg-7 col-sm-7">
+<input name="teleemer" id="teleemer" type="text" placeholder="Telefono en caso de Emergencia" value="<?php echo $resultado['tlf_res'];?>" maxlength="7"pattern="\*d" title="Solo numeros"  class="form-control"/></div></div>&nbsp; <div class="form-group">
+
+<label for="parentescor" class="col-lg-2 col-sm-2 control-label">Parentesco</label>
+        <div class="col-lg-10 col-sm-10">
     <select id="parentescon" name="parentescon" class="form-control" value="<?php echo $resultado['parentesco'];?>" onkeypress="return validar(event,this)">
 	<option>Padre</option>
 	<option>Madre</option>
@@ -244,7 +266,7 @@ header("location: ../mal.php?noinscrito=1");
         <option>Abuelo</option>
         <option>Primo</option>
         <option>Conocido</option>
-	</select> </div>
+	</select> </div></div>
 
    <center>
       <input type="button" onclick="prevTab('#menu');" value="1. Datos del representante" class="btn btn-info">
@@ -337,7 +359,7 @@ No<input type="radio" name="becaa" id="becano" value="no">
 <div class="tab-pane" id="vacunas">
 <center>
      <legend> <h4>1. Datos de vacunacion</h4></legend>
- <div class="form-inline">
+ <div class="form-horizontal">
   <div class="checkbox">
 <?php
 require("../conexion.php");
@@ -351,9 +373,13 @@ echo '<center>';
 echo '<h4>Vacunas habilitadas </h4>';
 echo '</center">';
 while($row=mysql_fetch_array($conss)){
+  echo '<div class="col-lg-3 col-sm-3">';
+  echo '<div class="form-group">';
 echo '<label class="checkbox-inline">';
 echo sprintf("<input name='vacu[]' id='vacu[]' type='checkbox' value='%s'>%s",$row["cod_va"],$row["nom_va"]);
-echo '</label>';
+echo '</label>';echo '
+</div>';echo '
+</div>';
 }
 }}if($d==0){
 echo '<h4>No exiten Vacunas habilitadas </h4>';
@@ -381,10 +407,11 @@ if($d!=0){
 mysql_query("COMMIT");
 echo '<h4>Actividades habilitadas </h4>';
 while($row=mysql_fetch_array($conss)){
-echo '<label class="checkbox-inline pull-left">';
+   echo '<div class="col-lg-4 col-sm-4">';
+echo '<label class="checkbox-inline">';
 echo sprintf("<input name='habi[]' id='habi' type='checkbox' value='%s'>%s",$row["cod_hab"],$row["tipo_hab"]);
 echo '&nbsp;&nbsp;</label>';
-echo 'Observaciones:<input name="obser[]" id="obser" type="text" class="col-xs-2 form-control"><br>';
+echo 'Observaciones:<input name="obser[]" id="obser" type="text" class="col-xs-2 form-control"></div>';
 }
 }}if($d==0){
 echo '<h4>No exiten actividades habilitadas </h4>';
@@ -400,7 +427,7 @@ mysql_query("rollback");}
 <div class="tab-pane" id="enfermedades">
     <center>
 <legend> <h4>1. Enfermedades presentadas por el estudiante</h4></legend>
- <div class="form-inline">
+ <div class="form-horizontal">
   <div class="checkbox">
        <?php
 require("../conexion.php");
@@ -413,11 +440,12 @@ if($d!=0){
 mysql_query("COMMIT");
 echo '<h4>Enfermedades habilitadas </h4>';
 while($row=mysql_fetch_array($conss)){
+    echo '<div class="col-lg-3 col-sm-3">';
 echo '<div class="form-group">';
 echo '<label class="checkbox-inline">';
 echo "<input name='enfer[]' id='enfer' type='checkbox' value='".$row["cod_enf"]."'></td><td>".$row["tipo_enf"]."";
 echo '</label>';
-echo '</div>';
+echo '</div>';echo '</div>';
 }
 }}if($d==0){
 echo '<h4>No exiten enfermedades habilitadas </h4>';
@@ -447,9 +475,10 @@ if($d!=0){
 mysql_query("COMMIT");
 echo '<h4>Diversidades funcionales habilitadas </h4>';
 while($row=mysql_fetch_array($conss)){
+      echo '<div class="col-lg-3 col-sm-3">';
 echo '<label class="checkbox-inline">';
 echo "<td><input name='fun[]' id='fun' type='checkbox' value='".$row["cod_div"]."'></td><td>".$row["nom_div"]."</td>";
-echo '</label>';}
+echo '</label>';echo '</div>';}
 }}if($d==0){
 echo '<h4>No exiten diversidades habilitadas </h4>';
 mysql_query("rollback");}
@@ -467,7 +496,7 @@ mysql_query("rollback");}
 <div class="tab-pane" id="materias">
 <center>
 <legend> <h4>1. Materias pendientes ligadas al alumno</h4></legend>
- <div class="form-inline">
+ <div class="form-horizontal">
   <div class="checkbox">
 
 <?php
@@ -481,16 +510,17 @@ if($d!=0){
 mysql_query("COMMIT");
 echo '<h4>Selecciona materias repetidas</h4>';
 while($row=mysql_fetch_array($conss)){
+        echo '<div class="col-lg-3 col-sm-3">';
 echo '<label class="checkbox-inline">';
 echo "<td><input name='mate[]' id='mate' type='checkbox' value=".$row['cod_mat']."></td><td>".'Materia: '.$row['nom_mat']." </td>";
-echo '</label>';
+echo '</label>'; echo '</div>';
 }
 }}if($d==0){
 echo '<h4>No exiten materias </h4>';
 mysql_query("rollback");}
 ?>    
  
-</div></div><br>
+</div></div><br><br>
 
 </center>  
 

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 date_default_timezone_set('America/Caracas'); 
 $db = mysql_pconnect("localhost", "root", "");
   if (!$db)
@@ -19,7 +19,7 @@ if($cons){
 $output=system("C:\wamp\bin\mysql\mysql5.6.12\bin\mysqldump.exe -u root liceo");
 header('Content-type: application/octet-stream');
 header('Content-Disposition: attachment; filename="'.$db.'.sql"');
-
+file:///C:/Users/Bladimir/Downloads/Respaldo_JGF-2014-03-15%2019-03-37.sql
 $fp=fopen("'.$db.'.sql", "r");
 fpassthru($fp);
 

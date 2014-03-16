@@ -24,7 +24,10 @@
 <script language="JavaScript" type="text/JavaScript">
 function check(input) {
 if (input.value != document.getElementById('pass').value) {
+  var campo=document.getElementById('pass2');
         alert('Contraseñas no coinciden.');
+       campo.value= "";
+       campo.focus();
     } else {
         input.setCustomValidity('');
     }

@@ -11,6 +11,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../dist/css/bootstrap-form-helpers.min.css" rel="stylesheet" media="screen">
 
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -85,18 +86,23 @@ header('location: ../admin/actualizar_director.php?exito=2');
 
 
 <p>Para actualizar, complete los datos a continuacion:</p>
-<form action="../admin/actualizar_director.php" method="POST" class="form-horizontal">
-<div class="col-lg-2 col-sm-2"><label for="nombre" class="control-label">Nombres</label></div>
+<form id="form2" action="../admin/actualizar_director.php" method="POST" class="form-horizontal">
+    
+<div class="form-group">
+<label for="nombre" class="col-lg-2 col-sm-2 control-label">Nombres</label>
 <div class="col-lg-4 col-sm-4"><input type="text" name="nombre" id="nombre" class="form-control"></div>
+</div>    
 
-<div class="col-lg-2 col-sm-2"><label for="apellido" class="control-label">Apellidos</label></div>
+<div class="form-group">
+<label for="apellido" class="col-lg-2 col-sm-2 control-label">Apellidos</label>
 <div class="col-lg-4 col-sm-4"><input type="text" name="apellido" id="apellido" class="form-control"></div>
-<br><br>
+</div>
+   <div class="form-group">
 <div class="col-lg-2 col-sm-2"><label for="cedula" class="control-label">C.I.N.V: </label></div>
 <div class="col-lg-4 col-sm-4"><select name="nac" id="nac" class="form-control"><option value="E-">E-</option><option value="V-">V-</option></select></div>
-<div class="col-lg-6 col-sm-6"><input type="text" name="cedula" id="cedula" class="form-control"></div>
-<br><br>
+<div class="col-lg-6 col-sm-6"><input type="text" name="cedula" id="cedula" class="form-control"></div></div>
 
+    <div class="form-group">
 <div class="col-lg-2 col-sm-2"><label for="telefono" class="control-label">Telefono: </label></div>
 <div class="col-lg-4 col-sm-4"><select name="codigo" id="codigo" class="form-control">
   <option>0424</option>
@@ -107,13 +113,13 @@ header('location: ../admin/actualizar_director.php?exito=2');
   <option>0235</option>
   </select></div>
 <div class="col-lg-6 col-sm-6"><input type="text" name="telefono" id="telefono" class="form-control"></div>
+</div>
 
-<br><br>
-
+    <div class="form-group">
 <div class="col-lg-2 col-sm-2"><label for="telefono" class="control-label">Direccion: </label></div>
 <div class="col-lg-10 col-sm-10"><input type="text" name="direccion" id="direccion" class="form-control"></div>
+</div>
 
-<br><br>
 <p class="text-center"><button type="submit" id="submit" name="submit" class="btn btn-success">Actualizar</button><button class="btn btn-info">Cancelar</button>
 </p>
 </form>
@@ -147,7 +153,63 @@ header('location: ../admin/actualizar_director.php?exito=2');
 
  <?php require('../footer.html') ?>    
    </div>
-    
+<script src="../dist/validar/jquery.validate.min.js"></script>
+
+  <script type="text/javascript">
+
+
+  jQuery.validator.addMethod("alpha", function (value, element) {
+        return this.optional(element) || value == value.match(/^[a-zA-Z ñÑáéíóúüç 0-9]+$/);
+    }, "No se permiten simbolos.");
+
+    jQuery.validator.addMethod("letras", function (value, element) {
+        return this.optional(element) || value == value.match(/^[a-zA-Z ñÑáéíóúüç]+$/);
+    }, "Solo letras.");
+
+
+    $(document).ready(function () {
+
+        $('#form2').validate(
+         {
+
+             errorClass: 'form-control-error',
+             validClass: 'form-control-sucess',
+              ignore: "",
+
+              submitHandler: function (form) {
+
+                if ($("#form2").valid() == false) { alert("Fallo el error"); } else {form.submit();  }
+         
+            },
+
+             rules: {
+               
+  nombre:{minlength: 2,letras:true,required:true},
+  apellido:{minlength: 2,letras:true,required:true},
+  telefono:{required:true, number:true, maxlength:7},
+  usuario:{alpha:true,minlength: 2,required:true},
+  direccion:{required:true, alpha:true},
+  cedula:{required:true, number:true, minlength:7},
+
+
+             },
+
+             highlight: function (element) {
+                 $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+             },
+
+             success: function (element) {
+                 $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+
+             }
+
+
+
+
+         });
+
+    }); // end document.ready
+</script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

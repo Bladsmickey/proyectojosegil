@@ -39,6 +39,16 @@ position:relative;
 left:50px;
 }
 
+.planilla{
+  font-family: arial;
+
+
+}
+
+h6{
+  font-family: arial;
+}
+
 	
 	</style>
 
@@ -46,18 +56,15 @@ left:50px;
   </head>
 
   <body>
-  <div class="wrap">
+  <div class="container">
+     <?php require('header.php'); ?> 
 
-<?php require('header.php'); ?>
-</div><br>
+     <div class="col-md-8 planilla">
+  <div class="col-lg-12">
+<div name="header" class="text-center">
+ 
 
-     <div class="container777">
-  <br>	
-  
-<div name="header" class="container text-center">
- <p><img alt="" height="76" src="Imagenes/logoo.jpg" width="793"></p>
-
-      &nbsp;<h6><b>
+<h6><b>
 
       <img alt="" src="Imagenes/repre.png" class="img-repre">FICHA DE INSCRIPCION Y REINSCRIPCION</b><img alt="" src="Imagenes/estu.png" class="img-estu"></h6>
 
@@ -66,7 +73,7 @@ left:50px;
 
 
 
-<div name="nino">
+<div name="nino" style="text-family: arial">
 <h6 class="text-left"><b>DATOS DE IDENTIFICACION DEL O LA ESTUDIANTE:</b></h6>
 <p class="text-justify">
 
@@ -254,7 +261,7 @@ echo sprintf("<label>%s</label>&nbsp;<input type='checkbox' checked='checked' di
 
 }
 
-echo '<center></br></br></br><form><input type="button" Class="hidden-print" value="Imprimir datos" onclick="window.print();return false;"/></form></center>';
+echo '<center></br></br></br><form><input type="button" Class=" btn btn-info hidden-print" value="Imprimir datos" onclick="window.print();return false;"/></form></center>';
 
 
 ?></p>	 
@@ -267,7 +274,7 @@ echo '<center></br></br></br><form><input type="button" Class="hidden-print" val
 
       </div>
 
-
+</div>
       </div>
        
  <?php require('footer.html') ?>

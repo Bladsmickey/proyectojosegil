@@ -2,17 +2,33 @@
 
 @media print {
 
-body {	
+@page 
+        {
 
-	margin-top: 4cm;
-	margin-bottom: 2cm;
-	margin-right: 2cm;
-	margin-left: 3cm;
+size: letter;
+margin:0px;
 
-  color : #000000;
-  background : #ffffff;
-  font-family : "Times New Roman", Times, serif;
-  font-size : 12pt;
+
+        }
+@page :first { 
+	margin-top: 3em; 
+	margin-left: 3em; 
+	margin-right: 4em; 
+	margin-bottom: 3em;
+} 
+        body 
+        {
+            background-color:#FFFFFF; 
+       }
+
+       p{
+       	font-family: "Times New Roman", Times, serif;
+       	font-size: 1.2em;
+       	line-height:1.5em;
+       }
+
+.grande{
+  font-size: 20pt;
 }
 
 

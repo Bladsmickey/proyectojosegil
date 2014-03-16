@@ -66,21 +66,30 @@ $c2=$con3['correo_al'];
      <?php require('../header.php'); ?> 
 
      <div class="col-md-8 well nopadding">
-
-      <form class="form-inline" id="form2" name="form2" method="get" action="actualiza_usu.php">
-        <h2 class="form-signin-heading"><span lang="es">Modifica el campo que necesites</span></h2>
+ <legend><center><h2>Modifica el campo que necesites</h2></center></legend>
+ <br>
+      <form class="form-horizontal" id="form2" name="form2" method="get" action="actualiza_usu.php">
+       
 <div class="form-group">
+  <label for="" class="col-lg-2">Nombre</label>
 <?php echo sprintf("<input type='hidden' id='cedula' name='cedula' value='%s'>",$cedula); ?>
-<?php echo sprintf('<input type="text"  name="nombre" class="form-control" placeholder="Nombres" required="required" autofocus value="%s"/>', $nombre); ?></div>
+<div class="col-lg-10 col-sm-10">
+<?php echo sprintf('<input type="text"  name="nombre" class="form-control" placeholder="Nombres" required="required" autofocus value="%s"/>', $nombre); ?></div></div>
 <div class="form-group">
-<?php echo sprintf('<input type="text"  name="apellido" class="form-control" placeholder="Apellidos" required="required" value="%s"/>', $apellido); ?></div>
+   <label for="" class="col-lg-2">Apellido</label>
+   <div class="col-lg-10 col-sm-10">
+<?php echo sprintf('<input type="text"  name="apellido" class="form-control" placeholder="Apellidos" required="required" value="%s"/>', $apellido); ?></div></div>
 <div class="form-group">
-<?php echo sprintf('<input type="email" name="correo" title="Introduzca una direccion valida" class="form-control" placeholder="Correo electronico"required="required" value="%s"/>', $c1); ?></div><br>
-Tiene correo alternativo?
-<label class="radio-inline" id="vacuna">Si<input name="vacu" type="radio" id="vacun" value="si" checked>	</label><label class="radio-inline" id="vacuna">No<input type="radio" name="vacu" id="vacn" value="no"></label>
+   <label for="" class="col-lg-2">Correo-e</label>
+   <div class="col-lg-10 col-sm-10">
+<?php echo sprintf('<input type="email" name="correo" title="Introduzca una direccion valida" class="form-control" placeholder="Correo electronico"required="required" value="%s"/>', $c1); ?></div></div>
 <div class="form-group">
-<?php echo sprintf('<input type="email" name="correo2" id="correo2" class="form-control" placeholder="Correo alternativo" title="Introduzca una direccion valida" required="required" value="%s"/>', $c2); ?></div>
-    <br><br>
+ <label  class="col-lg-2">Tiene correo alternativo?</label>
+ <div class="col-lg-4 col-sm-4">
+<label class="radio-inline" id="vacuna">Si<input name="vacu" type="radio" id="vacun" value="si" checked>	</label><label class="radio-inline" id="vacuna">No<input type="radio" name="vacu" id="vacn" value="no"></label></div>
+ <div class="col-lg-6 col-sm-6">
+<?php echo sprintf('<input type="email" name="correo2" id="correo2" class="form-control" placeholder="Correo alternativo" title="Introduzca una direccion valida" required="required" value="%s"/>', $c2); ?></div></div>
+    <br>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Actualizar</button>
       </form>
 
