@@ -12,7 +12,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../dist/css/bootstrap.css" rel="stylesheet">
-    <link href="../dist/css/bootstrap-form-helpers.css" rel="stylesheet" media="screen">
+    <link href="../dist/css/bootstrap-formhelpers.css" rel="stylesheet" media="screen">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
       <script src="../assets/js/html5shiv.js"></script>
       <script src="../assets/js/respond.min.js"></script>
@@ -73,7 +73,6 @@
 	$estados2=mysql_query($sql2,$link);
 ?>
 
-<script src="../jquery-1.7.1.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(
 	function () {
@@ -169,7 +168,7 @@ function validar(e,solicitar){
 
 <div class="col-lg-7 col-sm-7">
  <div class="form-group">
-<input name="cedular" type="text" data-toggle="tooltip" title="Solo numeros" maxlength="8" class="form-control" placeholder="Ej: 1111111" required/>
+<input name="cedular" id="cedular" type="text" data-toggle="tooltip" title="Solo numeros" maxlength="8" class="form-control" placeholder="Ej: 1111111" required/>
     </div></div></div>
   
 <div class="form-horizontal">
@@ -821,6 +820,39 @@ mysql_query("rollback");}
 
 <script src="../dist/js/bootstrap-formhelpers.js"></script>
 <script src="../dist/validar/jquery.validate.min.js"></script>
+
+<script>
+  
+$(document).ready(function(){
+
+$('#cedular').bind("paste change keyup",function(){
+
+var cedula=$('#cedular').val();
+      
+  var jsonUrl = 'repre.php';
+     $.getJSON(jsonUrl+'?cedularepre='+cedula, function(json) {
+
+
+$('#nombrer').val(json.Nombre);
+$('#apellidor').val(json.Apellido);
+$('#sexor').val(json.sexo);
+$('#fechas').val(json.fech_nac);
+$('#parentescor').val(json.paren);
+$('#niveledur').val(json.niv_educ);
+$('#profesionr').val(json.prof);
+$('#lugartr').val(json.lug_tra);
+$('#diretr').val(json.dire_tra);
+$('#telefonor').val(json.tele_tra);
+$('#direccr').val(json.dire_res);
+$('#telrr').val(json.tele_res);
+
+});
+
+
+});
+  });
+
+</script>
 
 
 

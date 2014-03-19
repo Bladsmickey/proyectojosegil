@@ -10,6 +10,9 @@ if(@$_SESSION['usuario']!=NULL){
 @$_SESSION['correo']='N/A';
 @$_SESSION['cedula']='N/A';
 }
+
+
+
 ?>
 
 <style type="text/css">
