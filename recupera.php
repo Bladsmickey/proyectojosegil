@@ -12,12 +12,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.css" rel="stylesheet">
-     <link href="examples/sticky-footer-navbar/sticky-footer-navbar.css" rel="stylesheet">
-    <link href="dist/css/main.css" rel="stylesheet">
 
-
-    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -57,14 +52,14 @@ $cabeceras = 'From: remitente@dominio.com' . "\r\n" .
              'Reply-To: remitente@dominio.com' . "\r\n" .
              'X-Mailer: PHP/' . phpversion();
   
-if(mail($para, $asunto, $mensaje, $cabeceras)) {
+if(@mail($para, $asunto, $mensaje, $cabeceras)) {
 $exito=1;
-}else {
-$exito=0;
-}}
-else{
+}else{
 mysql_query("rollback");
 header("location: mal.php?bueno=5");}
+
+}
+
 ?>
   <body>
     <div class="container">

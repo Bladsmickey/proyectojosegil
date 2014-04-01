@@ -30,17 +30,42 @@
    <?php require('header.php'); ?>
     <div class="col-xs-8 well nopadding">
 
-      <form class="form-group" id="form1" name="form1" method="POST" action="autenticar.php">
-        <h3>Parece que no te has autenticado, te invitamos a hacerlo.</h3>
+<h3><p class="text-center">Parece que no te has autenticado, te invitamos a hacerlo.</p></h3>
+<br><br>
+
+      <form class="form-horizontal" id="form1" name="form1" method="POST" action="autenticar.php">
+  
+<div class="form-group">
+<label class="control-label col-md-3 col-sm-3">Nombre de usuario: </label>
+<div class="col-md-9 col-sm-9"> 
+  <div class="input-group">
+<span class="input-group-addon glyphicon glyphicon-user"></span>
+ <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Usuario" autofocus required="required"></div></div>
+</div>
+       
+<div class="form-group">
+
+<label class="control-label col-md-3 col-sm-3">Contraseña: </label>
+
+<div class="col-md-9 col-sm-9">  
+<div class="input-group">
+<span class="input-group-addon glyphicon glyphicon-edit"></span>
+  <input type="password" pattern="|^([a-zA-ZñÑáéíóúüç0-9]+\s*)+$" name="contrasena" id="contrasena" class="form-control" placeholder="Contraseña" required="required"></div>
+</div></div>
+      
+<div class="form-group">
+ <label class="control-label col-md-3 col-sm-3">Recordar</label>
 
 
-        <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Usuario" autofocus required="required">
-        <input type="password" pattern="|^([a-zA-ZñÑáéíóúüç0-9]+\s*)+$" name="contrasena" id="contrasena" class="form-control" placeholder="Contraseña" required="required">
 
-        <label class="checkbox">
-          <input type="checkbox" value="recordar">Recordar</label>
+<div class="col-md-9 col-sm-9">
+       <input type="checkbox" value="recordar"> </div></div>
 
- <span>Si no recuerdas tus datos para ingresar al sistema dirigete <a href="recuperar.php">aqui </a></span>
+
+<div class="form-group">
+  <div class="col-md-12 col-sm-12 text-center"><span>Si no recuerdas tus datos para ingresar al sistema dirigete <a href="recuperar.php">aqui </a></span></div>
+</div>
+ 
         <button class="btn btn-lg btn-primary btn-block" type="submit">Autenticar</button>
       </form>   
     <?php if(@$error==1){echo '<center><div class="text-center alert alert-warning">Usuario o contraseña incorrectos</div></center>';}?>

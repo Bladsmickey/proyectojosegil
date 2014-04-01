@@ -25,18 +25,38 @@
    <div class="container">
    <?php require('header.php'); ?>
     <div class="col-xs-8 well nopadding">
-      <form class="form-signin" id="form2" name="form2" method="get" action="recupera.php">
-        <h2 class="form-signin-heading"><span lang="es">Completa los campos a continuacion</span></h2></br>
-<center>Luego se le enviara un correo con sus datos de ingreso!</center>
-<input type="text" name="correo" class="form-control" placeholder="Correo Electrónico"required="required"></br>
- <input type="text" pattern="\d*" name="cedula" class="form-control" placeholder="Cedula (solo numeros)" maxlength="8" required="required"><br>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar correo</button>
+      <form class="form-horizontal" id="form2" name="form2" method="get" action="recupera.php">
+
+        <h2><p class="text-center">Completa los campos a continuacion</p></h2></br>
+
+<p class="text-center">Luego se le enviara un correo con sus datos de ingreso!</p>
+
+<div class="form-group">
+<label class="control-label col-md-3 col-sm-3">Correo electronico: </label>
+<div class="input-group col-md-9 col-sm-9">
+  <span class="input-group-addon">@</span>
+<input type="email" name="correo" class="form-control" placeholder="Ejemplo@ejemplo.com" required="required">
+</div></div>
+
+
+
+<div class="form-group">
+<label for="" class="control-label col-md-3 col-sm-3">C.I.N.V: </label>
+
+<div class="input-group col-md-9 col-sm-9">
+  <span class="input-group-addon">Nº</span>
+ <input type="text" pattern="\d*" name="cedula" class="form-control" placeholder="99999999" maxlength="8" required="required"><br>
+       </div>
+
+       </div> 
+
+
+       <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar correo</button>
       </form>
 
     </div> <!-- /container -->
     
     
-<?php require('footer.html') ?>
 </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
